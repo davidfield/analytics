@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.bigpanda.domain.Event;
 
-public interface AnalyticsService extends Runnable{
+public interface AnalyticsService extends Runnable {
 
 	Optional<Event> getEvent(String json);
 

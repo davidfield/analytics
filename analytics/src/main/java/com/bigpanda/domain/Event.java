@@ -1,14 +1,10 @@
 package com.bigpanda.domain;
 
 public class Event {
-	
+
 	private String event_type;
 	private String data;
 	private String timestamp;
-	
-	public Event() {
-		
-	}
 
 	public String getEvent_type() {
 		return event_type;
@@ -33,6 +29,5 @@ public class Event {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	
 
 }
