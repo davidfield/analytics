@@ -2,7 +2,8 @@ The application is developed using Spring Boot.
 https://spring.io/projects/spring-boot
 
 To run in IDE:
-Run the com.bigpanda.analytics.EventAnalyticsApplication main method as 'Spring Boot App'.
+Run the com.bigpanda.analytics.EventAnalyticsApplication main method as 'Spring Boot App' 
+or Java Application'.
 
 The name and path of the event generator are both defined in the file application.properties.
 Edit these as required.
