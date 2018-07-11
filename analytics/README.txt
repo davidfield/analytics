@@ -7,6 +7,11 @@ Run the EventAnalyticsApplication main method as 'Spring Boot App'.
 The name and path of the event generator are both defined in the file application.properties.
 Edit these as required.
 
+The following REST resources are defined:
+/event/analytics/types
+/event/analytics/datawords
+
+
 Areas for improvements:
 1. Unit tests for the public methods defined in the AnalyticsService method.
 2. Logging of all processed events.
