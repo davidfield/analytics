@@ -26,5 +26,4 @@ public class AnalyticsController {
 	public Map<String, Integer> dataWords() {
 		return analyticsService.getDataWordCounts();
 	}
-
 }
