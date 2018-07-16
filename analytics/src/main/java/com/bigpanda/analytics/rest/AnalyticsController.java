@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bigpanda.analytics.service.AnalyticsService;
 import com.bigpanda.analytics.service.AnalyticsServiceImpl;
 
 @RestController
@@ -14,7 +15,7 @@ import com.bigpanda.analytics.service.AnalyticsServiceImpl;
 public class AnalyticsController {
 
 	@Autowired
-	private AnalyticsServiceImpl analyticsService;
+	private AnalyticsService analyticsService;
 
 	@GetMapping("/types")
 	public Map<String, Integer> types() {
