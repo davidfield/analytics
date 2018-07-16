@@ -13,7 +13,7 @@ import com.bigpanda.domain.Event;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
-public class AnalyticsConsumerImpl implements EventConsumer {
+public class EventConsumerImpl implements EventConsumer {
 
 	@Autowired
 	private BlockingQueue<String> blockingQueue;

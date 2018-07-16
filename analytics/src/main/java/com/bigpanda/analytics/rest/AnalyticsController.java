@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bigpanda.analytics.service.AnalyticsService;
-import com.bigpanda.analytics.service.AnalyticsConsumerImpl;
+import com.bigpanda.analytics.service.EventConsumerImpl;
 
 @RestController
 @RequestMapping("/event/analytics")
