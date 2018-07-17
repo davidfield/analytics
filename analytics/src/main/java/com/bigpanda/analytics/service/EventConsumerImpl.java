@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
+import java.util.function.BiFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -42,11 +43,16 @@ public class EventConsumerImpl implements EventConsumer {
 		return Optional.of(e);
 	}
 
-	private void addEventDataToStatistics(Event event) {
-		eventTypeCounts.merge(event.getEvent_type(), 1, Integer::sum);
-		dataWordCounts.merge(event.getData(), 1, Integer::sum);
+	private void addEventDataToStatistics(Event event) {		
+		BiFunction<String, Integer, Integer> biFunction = (k, v) -> v + 1;
+		
+		eventTypeCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
+		eventTypeCounts.computeIfPresent(event.getEvent_type(), biFunction);
+		
+		dataWordCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
+		dataWordCounts.computeIfPresent(event.getEvent_type(), biFunction);
 	}
-
+	
 
 	public void process() {
 		while (true)
