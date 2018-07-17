@@ -46,11 +46,12 @@ public class EventConsumerImpl implements EventConsumer {
 	private void addEventDataToStatistics(Event event) {		
 		BiFunction<String, Integer, Integer> biFunction = (k, v) -> v + 1;
 		
-		eventTypeCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
 		eventTypeCounts.computeIfPresent(event.getEvent_type(), biFunction);
-		
-		dataWordCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
+		eventTypeCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
+
 		dataWordCounts.computeIfPresent(event.getEvent_type(), biFunction);
+		dataWordCounts.computeIfAbsent(event.getEvent_type(), k -> new Integer(1));
+
 	}
 	
 
